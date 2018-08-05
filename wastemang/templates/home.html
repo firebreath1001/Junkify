@@ -1,0 +1,56 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+{% block title %}Home | Junkify{% endblock %}
+
+{% block content %}
+
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Junkify</h1>
+						<p>Hola guys! this new website helps you literallydeal with junk!!<br />All you have to do is sign in and press the sell button.</p>
+					</header>
+                {% if user.is_authenticated %}
+                  <p class="blinking">Hi {{ user.username }}!</p>
+                    <p><a href="{% url 'logout' %}" class = "button big scrolly">logout</a></p>
+                    <p>hey {{user.username}} the button below helps you to get rid of Junk!</p>
+                    <p><a href = "{% url 'details' %} " class = "button big scrolly">Sell</a></p>
+                {% else %}
+                    <p>You are not logged in</p>
+                    <a href="{% url 'login' %}" class ="button big scrolly">LogIn</a>
+                    <a href="{% url 'signup' %}" class = "button big scrolly">SignUp</a>
+                {% endif %}
+
+					<!--<a href="#main" class="button big scrolly">Login</a>-->
+					<!--<a href="#main" class="button big scrolly">Sign Up</a>-->
+				</div>
+			</section>
+
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>Developed By : </p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}

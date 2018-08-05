@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>sell | Junkify</title>
+<style>
+
+body
+{
+  background-image: url("/static/css/images.jpg");
+  background-size: cover;
+}
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 50px;
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+}
+h3 {
+    padding-top: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 25px;
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+  margin-top: 15px;
+    display: inline-block;
+    position: relative;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+/*
+    Name:           ph-buttons
+    Description: 	Pixcil Hub Buttons
+    Author: 		   PixcilsÂ®
+    Version: 	  	1.0
+*/
+
+/*Main button class
+==========================*/
+.ph-button {
+
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    padding: 19px 39px 18px;
+    font-size: 18px;
+
+}
+
+/*Green
+==========================*/
+.ph-btn-green {
+
+    border-color: #3AC162;
+	background-color: #5FCF80;
+  text-align: center;
+
+
+}
+.ph-btn-green:hover, .ph-btn-green:focus, .ph-btn-green:active {
+    background-color: #4BC970;
+    border-color: #3AC162;
+}
+
+/*Blue
+==========================*/
+.ph-btn-blue {
+
+    border-color: #326E99;
+    background-color: #3F8ABF;
+}
+
+.ph-btn-yellow {
+
+    border-color: #efd610;
+    background-color: #f4de35;
+}
+/*Violet
+==========================*/
+.ph-btn-violet {
+
+     background-color: violet;
+     border-color: #AAB3BB;
+}
+
+
+/*Red
+==========================*/
+.ph-btn-red {
+
+    background-color: #ED5A5A !important;
+    border-color: #EA4343 !important;
+
+}
+
+/*DEMO ONLY FOR CENTER POSITION*/
+
+.ph-container {
+  display: table;
+   margin: 0 auto
+}
+
+.ph-float {
+
+  float: left;
+  width: 22%;
+  padding: 10px;
+  padding-top: 50px;
+  text-align: center;
+
+}
+
+</style>
+</head>
+<script>
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+</script>
+<body>
+<form method="post">{%csrf_token%}
+<h2>Select Items</h2>
+    <div class="ph-float">
+      <a href = "#" class='ph-button ph-btn-blue'>Electronic</a>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" name = "electronic" placeholder="Enter the Weight" id="myInput" value="0" onkeypress="return isNumberKey(event)">
+        </div>
+    </div>
+
+    <div class="ph-float">
+      <a href = '#' class='ph-button ph-btn-red'>Plastic</a>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" name = "plastic" placeholder="Enter the Weight" id="myInput" value="0" onkeypress="return isNumberKey(event)">
+      </div>
+    </div>
+
+    <div class="ph-float">
+      <a href = '#' class='ph-button ph-btn-violet'>Paper</a>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" name = "paper"  placeholder="Enter the Weight" id="myInput" value="0" onkeypress="return isNumberKey(event)">
+      </div>
+    </div>
+    <div class="ph-float">
+      <a href = '#' class='ph-button ph-btn-yellow'>Others</a>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text"name = "others" placeholder="Enter the Weight" id="myInput" value="0" onkeypress="return isNumberKey(event)">
+      </div>
+    </div>
+     <h3>Enter the time of pickup :
+  <input align="right" type="time" name = "time" placeholder="Enter the Weight" id="myInput" value="0" onkeypress="return isNumberKey(event)">
+</h3>
+</form>
+<p align="center">
+<a href = "{% url 'thank' %}"align="center" class="ph-button ph-btn-green"type="submit" value="Submit">Submit</a>
+</p>
+</body>
+</html>

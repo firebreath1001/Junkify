@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<title>Details | Junkify</title>
+<div class="container">
+<div class="row">
+<link href={% static 'css/details.css' %} type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" rel="stylesheet">
+    <form class="col s12" id="reg-form">
+      <div class="row">
+        <div class="input-field col s12">
+<input required type="text" name="Name" id="Email" class="validate" placeholder="Name" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input required type="text" name="mobile" id="Email" class="validate" placeholder="Mobile" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+<input required type="text" name="Address" id="Email" class="validate" placeholder="Address"/>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+        <div class="input-field col s6">
+          <a href = "{% url 'sell' %} " class="btn btn-large btn-register waves-effect waves-light" type="submit" name="action">Confirm
+            <i class="material-icons right">done</i>
+          </a>
+      </div>
+    </form>
+  </div>
+</div>
